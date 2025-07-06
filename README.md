@@ -108,7 +108,7 @@ This project is licensed under the GNU General Public License v2.0.
 See the LICENSE file for more information.
 
 ## 🙌 Credits
-Made by HypeFawx (LittyGames.net)
+Made by HypeFawx (LittyGames.net) aka Faded.
 Inspired by Rockstar's original GTA V Online chat UI.
 
 ---
