@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTATextOverlay", "GTATextOverlay.csproj", "{8501258B-03A4-4767-9961-3E465F781B6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTAChatServer", "..\GTAChatServer\GTAChatServer.csproj", "{097E1ABA-1BEF-495B-9D65-C52E83D17D28}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8501258B-03A4-4767-9961-3E465F781B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8501258B-03A4-4767-9961-3E465F781B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8501258B-03A4-4767-9961-3E465F781B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8501258B-03A4-4767-9961-3E465F781B6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{097E1ABA-1BEF-495B-9D65-C52E83D17D28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{097E1ABA-1BEF-495B-9D65-C52E83D17D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{097E1ABA-1BEF-495B-9D65-C52E83D17D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{097E1ABA-1BEF-495B-9D65-C52E83D17D28}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {827301B6-2312-408F-A536-B4039D619451}
+	EndGlobalSection
+EndGlobal

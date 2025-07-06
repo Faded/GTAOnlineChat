@@ -1,0 +1,51 @@
+﻿<Window x:Class="GTATextOverlay.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Settings"
+        Width="313"
+        Height="219"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        WindowStyle="ToolWindow">
+    <Grid Margin="10,10,10,0" Height="163" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="191*"/>
+            <ColumnDefinition Width="189*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Nickname -->
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10" Grid.ColumnSpan="2">
+            <TextBlock Width="120" VerticalAlignment="Center">Nickname:</TextBlock>
+            <TextBox x:Name="NicknameBox" Width="156"/>
+        </StackPanel>
+
+        <!-- Server dropdown -->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,0,0,10" Grid.ColumnSpan="2">
+            <TextBlock Width="120" VerticalAlignment="Center">Server Location:</TextBlock>
+            <ComboBox x:Name="ServerDropdown" Width="150"/>
+        </StackPanel>
+
+        <!-- Message duration -->
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0,0,0,10" Grid.ColumnSpan="2">
+            <TextBlock Width="120" VerticalAlignment="Center">Message Time (sec):</TextBlock>
+            <TextBox x:Name="DisplayDurationBox" Width="50"/>
+        </StackPanel>
+
+        <!-- Fade duration -->
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="0,0,0,10" Grid.ColumnSpan="2">
+            <TextBlock Width="120" VerticalAlignment="Center">Fade Time (sec):</TextBlock>
+            <TextBox x:Name="FadeDurationBox" Width="50"/>
+        </StackPanel>
+
+        <!-- Save button -->
+        <Button Grid.Row="4" Content="Save / Close" Width="120"
+                HorizontalAlignment="Left" Click="Save_Click" Margin="86,10,0,7" Grid.ColumnSpan="2"/>
+    </Grid>
+</Window>
