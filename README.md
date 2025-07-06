@@ -109,6 +109,7 @@ See the LICENSE file for more information.
 
 ## 🙌 Credits
 Made by HypeFawx (LittyGames.net) aka Faded.
+
 Inspired by Rockstar's original GTA V Online chat UI.
 
 ---
