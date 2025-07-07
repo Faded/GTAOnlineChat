@@ -56,7 +56,7 @@ namespace GTAChatServer
                     string ip = socket.ConnectionInfo.ClientIpAddress;
                     string host = socket.ConnectionInfo.Host;
                     int port = socket.ConnectionInfo.ClientPort;
-                    Console.WriteLine($"Client disconnected from ->\\n`- {{ip}}({{host}}):{{port}}\"");
+                    Console.WriteLine($"Client disconnected from ->\n`- {ip}({host}):{port}");
                     allSockets.Remove(socket);
                 };
 
@@ -73,7 +73,7 @@ namespace GTAChatServer
             });
 
             string publicIP = GetPublicIPAddress();
-            Console.WriteLine($"Server running on ws://{publicIP}:8181");
+            Console.WriteLine($"Chat Server IP: {publicIP}");
             Console.ReadLine();
         }
 

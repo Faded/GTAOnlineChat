@@ -37,6 +37,7 @@ using System.Collections.Generic;
 using System.Windows.Media;
 using Gma.System.MouseKeyHook;
 using System.Windows.Media.Animation;
+using System.Windows.Media.Effects;
 
 namespace GTATextOverlay
 {
@@ -47,6 +48,7 @@ namespace GTATextOverlay
     /// </summary>
     public partial class MainWindow : Window
     {
+        private float projectVersion = 0.2f;
         private UserSettings _settings;
         private WebSocket _wsClient;
 
@@ -78,7 +80,7 @@ namespace GTATextOverlay
             _wsClient = new WebSocket(ServerList.Servers[_settings.ServerIndex].Address);
             _wsClient.OnOpen += (sender, e) =>
             {
-                Console.WriteLine("Connected to server");
+                AddChatMessage("Connected to Chat");
             };
 
             _wsClient.OnMessage += (sender, e) =>
@@ -90,7 +92,7 @@ namespace GTATextOverlay
 
             _wsClient.OnClose += (sender, e) =>
             {
-                Console.WriteLine("Disconnected from server. Attempting to reconnect...");
+                AddChatMessage("Reconnecting...");
                 ReconnectToServer();
             };
 
@@ -103,10 +105,7 @@ namespace GTATextOverlay
             reconnectTimer.Tick += (s, e) =>
             {
                 if (!_wsClient.IsAlive)
-                {
-                    Console.WriteLine("Reconnecting...");
                     _wsClient.Connect();
-                }
             };
             reconnectTimer.Start();
         }
@@ -128,13 +127,13 @@ namespace GTATextOverlay
 
         /// <summary>
         /// Handles global hotkeys:
-        /// - Ctrl+Y: open chat
+        /// - Y: open chat
         /// - Ctrl+Alt+Y: open settings
         /// - Ctrl+K: quit application
         /// </summary>
         private void GlobalKeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
-            if (e.KeyCode == System.Windows.Forms.Keys.Y && e.Control && ChatInput.Visibility != Visibility.Visible)
+            if (e.KeyCode == System.Windows.Forms.Keys.Y && ChatInput.Visibility != Visibility.Visible)
             {
                 Dispatcher.Invoke(() =>
                 {
@@ -239,21 +238,31 @@ namespace GTATextOverlay
         private void AddChatMessage(string message)
         {
             _messageHistory.Add(message);
-            if (_messageHistory.Count > 10)
+            if (_messageHistory.Count > 5)
                 _messageHistory.RemoveAt(0);
 
             var text = new TextBlock
             {
                 Text = message,
                 Foreground = Brushes.White,
-                FontSize = 16,
-                Margin = new Thickness(0, 2, 0, 2),
+                FontSize = 18,
+                Margin = new Thickness(0, 1, 0, 1),
                 Opacity = 1,
                 TextWrapping = TextWrapping.Wrap,
-                MaxWidth = 300 
+                MaxWidth = 300,
+                Effect = new DropShadowEffect
+                {
+                    Color = Colors.Black,
+                    Direction = 45,
+                    ShadowDepth = 1,
+                    BlurRadius = 3,
+                    Opacity = 0.8
+                }
             };
 
+
             ChatStack.Children.Add(text);
+            ChatScrollViewer.ScrollToEnd();
 
             var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(5) };
             timer.Tick += (s, e) =>

@@ -38,7 +38,7 @@ public static class ServerList
     /// </summary>
     public static readonly List<ServerInfo> Servers = new List<ServerInfo>
     {
-        new ServerInfo("Phoenix, AZ", "ws://0.0.0.0:8181")
+        new ServerInfo("Phoenix, AZ", "ws://127.0.0.1:8181")
         // Add more
         // new ServerInfo("Some, Place", "ws://1.2.3.4:8181")
     };

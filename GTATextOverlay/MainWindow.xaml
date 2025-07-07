@@ -13,25 +13,30 @@
 
     <Grid>
         <StackPanel VerticalAlignment="Center"
-                HorizontalAlignment="Right"
-                Margin="20"
-                x:Name="ChatContainer">
+            HorizontalAlignment="Right"
+            Margin="20"
+            x:Name="ChatContainer">
 
-            <!-- Chat message list -->
-            <StackPanel x:Name="ChatStack" Margin="0,0,0,10" />
+            <ScrollViewer VerticalScrollBarVisibility="Hidden"
+              HorizontalScrollBarVisibility="Disabled"
+              MaxHeight="300"
+              Width="350"
+              x:Name="ChatScrollViewer"
+              Margin="0,0,0,5"
+              Padding="5">
+        <StackPanel x:Name="ChatStack" />
+            </ScrollViewer>
 
-            <!-- Chat input under messages -->
             <TextBox x:Name="ChatInput"
-                 Visibility="Collapsed"
-                 FontSize="16"
-                 Width="300"
-                 Background="#66000000"
-                 Foreground="White"
-                 BorderBrush="White"
-                 BorderThickness="1"
-                 Margin="0,10,0,0"
-                 KeyDown="ChatInput_KeyDown" 
-                 Padding="8,2"/>
+             Visibility="Collapsed"
+             FontSize="16"
+             Width="350"
+             Background="#66000000"
+             Foreground="White"
+             BorderBrush="White"
+             BorderThickness="1"
+             Margin="0,10,0,0"
+             KeyDown="ChatInput_KeyDown" />
         </StackPanel>
     </Grid>
 </Window>

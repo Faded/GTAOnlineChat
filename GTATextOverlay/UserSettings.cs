@@ -31,8 +31,8 @@ public class UserSettings
 {
     public string Nickname { get; set; } = "Player";
     public int ServerIndex { get; set; } = 0;
-    public int MessageDurationSeconds { get; set; } = 300;
-    public int FadeDurationSeconds { get; set; } = 10;
+    public int MessageDurationSeconds { get; set; } = 30;
+    public int FadeDurationSeconds { get; set; } = 5;
 
     public static string SettingsPath => "settings.ini";
 
